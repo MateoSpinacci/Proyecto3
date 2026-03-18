@@ -62,7 +62,7 @@ public class Servicio {
         for (int i = 0; i < mesa.getClientes().length; i++) {
             if (mesa.getClientes()[i] == null) {
                 mesa.getClientes()[i] = cliente;
-                if (mesa.getCapacidad() == i + 1) {
+                if (contarClientes(mesa) == mesa.getCapacidad()) {
                     mesa.setLlena(true);
                 }
                 break;
@@ -74,11 +74,19 @@ public class Servicio {
         for (int i = 0; i < mesa.getClientes().length; i++) {
             if (mesa.getClientes()[i] == cliente) {
                 mesa.getClientes()[i] = null;
-                if (mesa.getCapacidad() == i) {
-                    mesa.setLlena(false);
-                }
+                mesa.setLlena(false);
                 break;
             }
         }
+    }
+
+    private int contarClientes(Mesa mesa) {
+        int count = 0;
+        for (Cliente cliente : mesa.getClientes()) {
+            if (cliente != null) {
+                count++;
+            }
+        }
+        return count;
     }
 }

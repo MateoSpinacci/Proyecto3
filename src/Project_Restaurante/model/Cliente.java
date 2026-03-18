@@ -19,7 +19,9 @@ public class Cliente {
         } else {
             System.out.println("Se encuentra en la mesa número " + idMesaSentado);
         }
-        pedido.mostrar_info();
+        if (pedido != null) {
+            pedido.mostrar_info();
+        }
     }
 
     public int getIdMesaSentado() {

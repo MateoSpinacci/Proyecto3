@@ -12,7 +12,7 @@ public class Plato extends Producto{
 
     @Override
     public void mostrar_info() {
-        System.out.println("El plato " + this.getNombre() + "cuenta con " +  this.calorias + "y cuesta $" + this.getPrecio());
+        System.out.println("El plato " + this.getNombre() + " cuenta con " +  this.calorias + "y cuesta $" + this.getPrecio());
     }
 
     public String getTipo() {

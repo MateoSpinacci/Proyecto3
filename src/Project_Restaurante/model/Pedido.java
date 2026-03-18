@@ -13,11 +13,12 @@ public class Pedido {
     }
 
     public double calcular_total(Cliente cliente) {
-        for (Producto producto : productos) {
-            total += producto.getPrecio();
+        total = 0;
+        for (int i = 0; i < productos.length; i++) {
+            total += productos[i].getPrecio() * cantidades[i];
         }
         if (cliente instanceof TieneDescuento) {
-            ((TieneDescuento) cliente).calcular_descuento(total);
+            total = ((TieneDescuento) cliente).calcular_descuento(total);
         }
         return total;
     }

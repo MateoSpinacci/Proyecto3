@@ -12,7 +12,7 @@ public class Bebida extends Producto{
 
     @Override
     public void mostrar_info() {
-        System.out.println("La bebida " + this.getNombre() + "de tamaño " +  this.tamanio + "cuesta $" + this.getPrecio());
+        System.out.println("La bebida " + this.getNombre() + " de tamaño " +  this.tamanio + " cuesta $" + this.getPrecio());
     }
 
     public int getTamanio() {
